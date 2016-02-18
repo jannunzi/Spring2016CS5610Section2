@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MovieApp">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="navigation/navigation.controller.js"></script>
+    <script src="search/search.controller.js"></script>
+    <script src="search/detail.controller.js"></script>
+    <script src="services/omdbapi.service.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie App</h1>
+
+        <nav ng-controller="NavController">
+            <ul class="nav nav-tabs">
+                <li ng-class="{'active': $location.url() == '/home'}"><a href="#/home">Home</a></li>
+                <li ng-class="{'active': $location.url() == '/search'}"><a href="#/search">Search</a></li>
+            </ul>
+        </nav>
+
+        <div ng-view></div>
+
+    </div>
+</body>
+</html>
